@@ -4,14 +4,12 @@ FROM geodynamics/aspect:v3.0.0
 ARG NB_USER=jovyan
 ARG NB_UID=1100
 ENV USER ${NB_USER}
-ENV NB_UID ${NB_UID}
 ENV HOME /home/${NB_USER}
 
 USER root
 
 RUN adduser --disabled-password \
     --gecos "Default user" \
-    --uid ${NB_UID} \
     ${NB_USER}
  
 RUN apt-get update && apt-get install -y \
