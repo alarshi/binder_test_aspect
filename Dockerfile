@@ -21,6 +21,5 @@ RUN apt-get update && apt-get install -y \
 COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
-USER ${NB_USER}
-
 RUN python3 -m pip install --no-cache-dir notebook jupyterlab
+USER ${NB_USER}
